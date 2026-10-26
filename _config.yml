@@ -1,0 +1,10 @@
+title: Alper Ozturk
+description: High school student in Istanbul interested in biochemistry, structural biology, and AI-assisted drug discovery.
+author:
+  name: Alper Ozturk
+theme: minima
+github_username: officeofalper
+header_pages:
+  - research.md
+  - publications.md
+  - blog.md
