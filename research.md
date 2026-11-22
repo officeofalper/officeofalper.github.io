@@ -22,3 +22,5 @@ permalink: /research/
 *Online research program · June–August 2026*
 
 Three literature reviews on cancer metabolism, immunometabolism and AI-assisted drug discovery. See [Publications](/publications/).
+
+Four computational projects grew out of these reviews, each testing one claim from them. See [Projects](/projects/).

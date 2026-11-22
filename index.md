@@ -8,6 +8,7 @@ Student at Yüksel-İlhan Alanyalı Science High School, Istanbul (graduating Ju
 
 - [Research](/research/)
 - [Publications](/publications/)
+- [Projects](/projects/)
 - [Blog](/blog/)
 
 ## Links
