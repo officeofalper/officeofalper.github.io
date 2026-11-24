@@ -55,9 +55,9 @@ and I say where it stops explaining things.
 
 ## When the docking input cannot support a correct answer
 
-*Molecular docking into seven crystal structures · [repository](https://github.com/officeofalper/sirt-docking) · [interactive page](https://officeofalper.github.io/sirt-docking/web/)*
+*Molecular docking into twelve crystal structures · [repository](https://github.com/officeofalper/sirt-docking) · [interactive page](https://officeofalper.github.io/sirt-docking/web/)*
 
-An inhibitor that opens its own binding pocket in SIRT2, docked into seven structures of
+An inhibitor that opens its own binding pocket in SIRT2, docked into twelve structures of
 the same protein. Into the crystal it came from, docking is near-perfect (0.35 Å). Into
 the unbound enzyme it is 11 Å wrong and never right — because the correct pose does not
 fit there at all: 26 of the ligand's 29 heavy atoms overlap the protein.
@@ -68,3 +68,25 @@ no warning. Two further structures separate the two possible causes, and the ans
 the pocket rather than the missing ligand. The most troubling case is a structure whose
 pocket was opened by a *different* inhibitor: it gives the best score in the whole study
 while being 9.7 Å wrong.
+
+## Does a docking rule travel? Testing my own result on a second target
+
+*Eight HSP90 structures, one reference ligand · [repository](https://github.com/officeofalper/hsp90-docking) · [interactive page](https://officeofalper.github.io/hsp90-docking/web/)*
+
+The SIRT2 study above ended with a rule: among a target's co-crystal structures, pick the
+one whose bound ligand most resembles your compound. The separation there was perfect. But
+I had chosen SIRT2 precisely because its induced fit is extreme, so the rule might only
+describe SIRT2. This is the attempt to break it.
+
+Two things went wrong before any result existed, and both are in the write-up. The protocol
+did not transfer: deleting waters is right on SIRT2 and destroys binding on HSP90, where
+the inhibitor reaches Asp93 through a bridging water. The self-docking control caught that
+at 6.29 Å. Then, after the results were written, I found that my clash count read only
+protein atoms while the docking ran against protein plus the retained waters — which had
+inverted a correlation from +0.80 to −0.08 and produced the study's most striking claim as
+an artefact.
+
+Corrected: the trend transfers and the steric mechanism with it, but the clean separation
+does not. A structure at Tanimoto 0.359 fails where one at 0.333 succeeds, because on HSP90
+the feature the ligand shapes is an ordered water network, and a whole-molecule fingerprint
+cannot see which part of a molecule rearranges it. The rule is narrower than I wrote it.
